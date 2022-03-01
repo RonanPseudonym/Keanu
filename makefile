@@ -6,5 +6,5 @@
 CC = g++
 CFLAGS = -std=c++14
  
-main.o: main.cpp parse.h
+main.o: main.cpp parse.h token.h lexer.h util.h
 	$(CC) $(CFLAGS) main.cpp
