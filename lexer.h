@@ -53,8 +53,12 @@ class Lexer {
                         new_token(TType::NVM, line);
                     } else if (current == "as based as") {
                         new_token(TType::AS_BASED_AS, line);
-                    } else if (current == "not as based as") {
-                        new_token(TType::NOT_AS_BASED_AS, line);
+                    } else if (current == "ded") {
+                        new_token(TType::DED, line);
+                    } else if (current == "mmm whatcha say") {
+                        new_token(TType::MMM_WHATCHA_SAY, line);
+                    } else if (current == "im so random") {
+                        new_token(TType::IM_SO_RANDOM, line);
                     } else if (current == "is") {
                         new_token(TType::IS, line);
                     } else if (is_numeric(current) && current.size() > 0) {

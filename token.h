@@ -29,6 +29,12 @@ enum TType {
 
     AIGHT_IMMA_HEAD_OUT,
 
+    MMM_WHATCHA_SAY,
+    IM_SO_RANDOM,
+
+    DED,
+    FLOOP,
+
     NEW_SHIT,
     NEWLINE
 };

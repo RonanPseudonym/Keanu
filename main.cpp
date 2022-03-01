@@ -18,14 +18,16 @@ void exec_from_file(std::string name) {
 }
 
 void shell() {
-    std::string inp;
+    // std::string inp;
 
-    for (;;) {
-        std::cout << "> ";
-        std::cin >> inp;
+    // for (;;) {
+    //     std::cout << "$ ";
+    //     std::cin >> inp;
 
-        exec(inp);
-    }
+    //     exec(inp);
+    // }
+
+    err("i got rid of the REPL now you can only run files\n(bitch)", Token(TType::INCREMENT, 1));
 }
 
 int main(int argc, char *argv[]) {

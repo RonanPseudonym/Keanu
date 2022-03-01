@@ -45,6 +45,10 @@ class Parser {
         std::map<std::string, int> variables;
         std::vector<LayerType> layers;
 
+        Parser() {
+            srand(time(0));
+        }
+
         void run(std::string data) {
             std::vector<Token> tokens = Lexer(data).tokens;
             std::string var_name = "";
@@ -186,6 +190,25 @@ class Parser {
 
                     case TType::RATIO:
                         set(var_name, 2, true, tokens, i);
+                        break;
+
+                    case TType::DED:
+                        set(var_name, 0, true, tokens, i);
+                        break;
+
+                    case TType::FLOOP:
+                        set(var_name, -1, true, tokens, i);
+                        break;
+
+                    case TType::IM_SO_RANDOM:
+                        set(var_name, rand() % 100, false, tokens, i);
+                        break;
+
+                    case TType::MMM_WHATCHA_SAY:
+                        std::cout << "\n> ";
+                        set(var_name, getchar(), false, tokens, i);
+                        getchar();
+
                         break;
 
                     case TType::VAR:
