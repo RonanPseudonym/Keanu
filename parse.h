@@ -2,6 +2,7 @@
 #include <vector>
 #include <sstream>
 #include <map>
+#include <string>
 
 #include "lexer.h"
 
@@ -200,12 +201,28 @@ class Parser {
                         set(var_name, -1, true, tokens, i);
                         break;
 
+                    case TType::COMMUNIST:
+                        if (tokens[i+1].type == TType::VAR) {
+                            int nvalue = std::stoi(std::to_string(find_var(var_name)) + std::to_string(find_var(tokens[i+1].content) - 1));
+                            
+                            auto ans = variables.find(var_name);
+
+                            if (ans != variables.end()) {
+                                ans->second = nvalue;
+                            }
+                            
+                            i += 2;
+                        } else {
+                            err("you cant be communist without a variable to communize dumbass", tokens[i]);
+                        }
+                        break;
+
                     case TType::IM_SO_RANDOM:
                         set(var_name, rand() % 100, false, tokens, i);
                         break;
 
                     case TType::MMM_WHATCHA_SAY:
-                        std::cout << "\n> ";
+                        std::cout << "> ";
                         set(var_name, getchar(), false, tokens, i);
                         getchar();
 

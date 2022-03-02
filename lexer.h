@@ -63,6 +63,8 @@ class Lexer {
                         new_token(TType::IM_SO_RANDOM, line);
                     } else if (current == "is") {
                         new_token(TType::IS, line);
+                    } else if (current == "communist") {
+                        new_token(TType::COMMUNIST, line);
                     } else if (is_numeric(current) && current.size() > 0) {
                         std::stringstream num_str(current);
 

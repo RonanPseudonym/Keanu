@@ -35,6 +35,8 @@ enum TType {
     DED,
     FLOOP,
 
+    COMMUNIST,
+
     NEW_SHIT,
     NEWLINE
 };
