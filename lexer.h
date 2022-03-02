@@ -55,6 +55,8 @@ class Lexer {
                         new_token(TType::AS_BASED_AS, line);
                     } else if (current == "ded") {
                         new_token(TType::DED, line);
+                    } else if (current == "floop") {
+                        new_token(TType::FLOOP, line);
                     } else if (current == "mmm whatcha say") {
                         new_token(TType::MMM_WHATCHA_SAY, line);
                     } else if (current == "soooo random") {
